@@ -21,11 +21,14 @@ for (let i = 0; i < 6; i++){
 }
 
 class App extends React.Component{
+  searchYelp(term, location, sortBy){
+    console.log(`Searching ${term} in ${location} by ${sortBy}`)
+  };
   render(){
     return (
       <div className="App">
         <h1>ravenous</h1>
-        <SearchBar />
+        <SearchBar searchYelp={this.searchYelp} />
         <BusinessList businesses={businessArr} />
       </div>
     );
